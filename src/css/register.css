@@ -1,0 +1,15 @@
+.register{
+    position:fixed;
+    top:50%;
+    left:50%;
+    height:400px;
+    width:400px;
+    transform: translate(-50%,-50%);
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.register > .form{
+    width: 100%;
+}
