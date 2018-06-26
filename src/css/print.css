@@ -1,0 +1,15 @@
+@media print {
+    /* TODO: 添加打印样式 */
+    body{
+        padding: 10px;
+    }
+    body .page aside{
+        display: none;
+    }
+    body .page main .skills .add,
+    body .page main .skills .remove,
+    body .page main .projects .add,
+    body .page main .projects .remove{
+        display: none;
+    }
+}

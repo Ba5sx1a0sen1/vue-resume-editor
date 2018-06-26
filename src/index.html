@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
 <div class="page" id="app">
@@ -22,7 +23,7 @@
                     <button class="button" @click="shareVisible=true">分享</button>
                 </li>
                 <li>
-                    <button class="button">打印</button>
+                    <button class="button" @click="print">打印</button>
                 </li>
                 <li>
                     <button class="button">换肤</button>
@@ -63,8 +64,8 @@
                     </div>
                     <span class="remove"  v-if="index>=4 && mode==='edit'" @click="removeSkill(index)">删除</span>
                 </li>
-                <li>
-                    <span  v-if="mode==='edit'" @click="addSkill">添加</span>
+                <li class="add">
+                    <span  v-if="mode==='edit'" @click="addSkill" >添加</span>
                 </li>
             </ul>
         </section>
@@ -90,7 +91,7 @@
                     </p>
                     <span class="remove" @click="removeProject(index)" v-if="index>=2">X</span>
                 </li>
-                <li v-if="mode==='edit'">
+                <li v-if="mode==='edit'" class="add">
                     <span @click="addProject">添加</span>
                 </li>
             </ol>
@@ -144,13 +145,6 @@
     </div>
     <button class="exitPreview" @click="mode='edit'" v-if="mode==='preview'">退出预览</button>
 </div>
-<style>
-    .exitPreview{
-        position: fixed;
-        top:20px;
-        left:20px;
-    }
-</style>
 <script src="../vendors/av-min.js"></script>
 <script src="../vendors/vue.min.js"></script>
 <script src="./js/av.js"></script>
